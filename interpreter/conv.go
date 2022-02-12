@@ -23,7 +23,16 @@ func convertStrsWithSpacesToUint32s(strs []string) ([]uint32, error) {
 func convertStrWithSpacesToUint32(str string) (uint32, error) {
 	trimmedStr := strings.TrimSpace(str)
 
-	n, err := strconv.ParseUint(trimmedStr, 10, 32)
+	n, err := parseUint32(trimmedStr)
+	if err != nil {
+		return 0, err
+	}
+
+	return uint32(n), nil
+}
+
+func parseUint32(str string) (uint32, error) {
+	n, err := strconv.ParseUint(str, 10, 32)
 	if err != nil {
 		return 0, err
 	}
