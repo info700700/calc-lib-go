@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-var ErrEmptyExp = errors.New("empty exp")
+var ErrEmptyExp = errors.New("empty expression")
 
 func Exec(str string) (uint32, error) {
 	if len(str) == 0 {
