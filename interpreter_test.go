@@ -32,3 +32,12 @@ func TestExec(t *testing.T) {
 		}
 	}
 }
+
+func TestExecEmptyExp(t *testing.T) {
+	expStr := ""
+
+	_, err := interp.Exec(expStr)
+	if err != interp.ErrEmptyExp {
+		t.Errorf("Err: %v. Expected ErrEmptyExp.", err)
+	}
+}

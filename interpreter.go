@@ -1,10 +1,17 @@
 package sum_interpreter_go
 
 import (
+	"errors"
 	"strings"
 )
 
+var ErrEmptyExp = errors.New("empty exp")
+
 func Exec(str string) (uint32, error) {
+	if len(str) == 0 {
+		return 0, ErrEmptyExp
+	}
+
 	parts := strings.Split(str, "+")
 
 	nums, err := convertStrsWithSpacesToUint32s(parts)
