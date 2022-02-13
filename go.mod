@@ -1,3 +1,3 @@
-module github.com/info700700/calc-lib-go
+module github.com/info700700/sum_interpreter_go
 
 go 1.17

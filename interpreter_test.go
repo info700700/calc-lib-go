@@ -1,9 +1,9 @@
-package interpreter_test
+package sum_interpreter_go_test
 
 import (
 	"testing"
 
-	"github.com/info700700/calc-lib-go/interpreter"
+	interp "github.com/info700700/sum_interpreter_go"
 )
 
 func TestExec(t *testing.T) {
@@ -22,7 +22,7 @@ func TestExec(t *testing.T) {
 	}
 
 	for _, tc := range testCases {
-		actual, err := interpreter.Exec(tc.str)
+		actual, err := interp.Exec(tc.str)
 		if err != nil {
 			t.Errorf("Unexpected error: %v", err)
 		}

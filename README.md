@@ -1,1 +1,1 @@
-# calc-lib-go
+# sum_interpreter_go

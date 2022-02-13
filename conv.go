@@ -1,4 +1,4 @@
-package interpreter
+package sum_interpreter_go
 
 import (
 	"strconv"
