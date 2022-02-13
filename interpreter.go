@@ -5,7 +5,10 @@ import (
 	"strings"
 )
 
-var ErrEmptyExp = errors.New("empty expression")
+var (
+	ErrEmptyExp   = errors.New("empty expression")
+	ErrInvalidExp = errors.New("invalid expression")
+)
 
 func Exec(str string) (uint32, error) {
 	if len(str) == 0 {
@@ -16,7 +19,7 @@ func Exec(str string) (uint32, error) {
 
 	nums, err := convertStrsWithSpacesToUint32s(parts)
 	if err != nil {
-		return 0, err
+		return 0, ErrInvalidExp
 	}
 
 	sum := sumUint32s(nums)
